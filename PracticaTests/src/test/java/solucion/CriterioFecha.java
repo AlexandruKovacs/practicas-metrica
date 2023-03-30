@@ -1,6 +1,8 @@
 package solucion;
 
-import java.util.regex.Pattern;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 
 public class CriterioFecha extends Criterio {
 	
@@ -8,15 +10,19 @@ public class CriterioFecha extends Criterio {
 		super("fecha");
 	}
 	
+	@Override
 	public boolean cumple(Object obj) {
-		
-		if (obj == null) {
-			return false;
-		}
-		
-		String fecha = (String) obj;
-		String fechaReExp = "(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/((19|20)\\d\\d)";
-
-		return Pattern.matches(fechaReExp, fecha);
+	    if (obj == null) {
+	        return false;
+	    }
+	    
+	    String fechaStr = (String) obj;
+	    
+	    try {
+	        LocalDate.parse(fechaStr, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+	        return true;
+	    } catch (DateTimeParseException e) {
+	        return false;
+	    }
 	}
 }

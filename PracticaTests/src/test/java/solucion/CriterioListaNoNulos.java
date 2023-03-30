@@ -1,6 +1,6 @@
 package solucion;
+
 import java.util.List;
-import java.util.Objects;
 
 public class CriterioListaNoNulos extends Criterio {
 	
@@ -10,9 +10,18 @@ public class CriterioListaNoNulos extends Criterio {
 
     @Override
     public boolean cumple(Object obj) {
-        
+    	
+        if (obj == null) {
+            return false;
+        }
+
         List<?> lista = (List<?>) obj;
-        
-        return lista.stream().allMatch(Objects::nonNull);
+
+        for (Object elemento : lista) {
+            if (elemento == null) {
+                return false;
+            }
+        }
+        return true;
     }
 }

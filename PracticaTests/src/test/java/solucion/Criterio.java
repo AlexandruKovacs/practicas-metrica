@@ -2,7 +2,7 @@ package solucion;
 
 public abstract class Criterio {
 	
-    protected Criterio(String nombre) {};
+    public Criterio(String nombre) {};
 
     @Override
     public boolean equals(Object obj) {

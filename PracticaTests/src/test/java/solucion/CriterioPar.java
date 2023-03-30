@@ -7,12 +7,12 @@ public class CriterioPar extends Criterio {
     }
 
     @Override
-    public boolean cumple(Object obj) {
-    	
-        if (obj == null) {
-            return false;
-        }
+	public boolean cumple(Object obj) {
+		 
+    	if (obj == null) {
+    		return false;
+    	}
         
-        return (int) obj % 2 == 0;
+    	return (int) obj % 2 == 0;
     }
 }

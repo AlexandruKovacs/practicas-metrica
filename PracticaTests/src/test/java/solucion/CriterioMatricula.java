@@ -10,13 +10,13 @@ public class CriterioMatricula extends Criterio {
 	
 	@Override
 	public boolean cumple(Object obj) {
-		
+		 
 		if (obj == null) {
 			return false;
 		}
 		
 		String matricula = (String) obj;
-		String matriculaRegExp = "[0-9]{4}[BCDFGHJKLMNPRSTVWXYZ]{3}";
+		String matriculaRegExp = "^[0-9]{4}[BCDFGHJKLMNPRSTVWXYZ]{3}$";
 		
 		return Pattern.matches(matriculaRegExp, matricula);
 	}
