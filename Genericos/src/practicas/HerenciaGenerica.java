@@ -37,29 +37,21 @@ class MiClaseA extends Padre {
 		this.valor = valor;
 	}
 
-
-
-
-
 	@Override
 	int longitud() {
 		return valor.length();
 	}
-
-
 }
 
 class MiClaseB extends Padre{
 
 	private Integer valor;
 	
-	
 	public MiClaseB(Integer valor) {
 		super();
 		this.valor = valor;
 	}
 	
-
 	@Override
 	int longitud() {
 		if(this.valor ==0) return 1;
@@ -71,5 +63,4 @@ class MiClaseB extends Padre{
 		}
 		return count;
 	}
-	
 }
