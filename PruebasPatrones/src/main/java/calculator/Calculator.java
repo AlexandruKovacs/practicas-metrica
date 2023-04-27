@@ -1,6 +1,7 @@
 package calculator;
 
 public class Calculator {
+	
     private int valor;
 
     public Calculator(int valor) {
@@ -16,11 +17,13 @@ public class Calculator {
     }
 
     public void multiplicar(int valor) {
+    	
         try {
             this.valor *= valor;
         } catch (ArithmeticException e) {
             System.out.println("Desbordamiento en la multiplicación");
         }
+        
     }
 
     public void dividir(int valor) {
