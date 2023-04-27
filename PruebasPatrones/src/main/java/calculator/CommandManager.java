@@ -19,7 +19,7 @@ public class CommandManager {
     
     public static Command getCommand(String[] args, Calculator calculator) {
     	
-        if (args == null) {
+        if (args.length < 2) {
             throw new IllegalArgumentException("Se deben proporcionar al menos dos argumentos: el comando y el valor.");
         }
 
