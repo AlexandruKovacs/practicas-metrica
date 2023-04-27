@@ -61,7 +61,7 @@ public class CommandTest {
         commandManager.registCommand(sumarCommand);
         assertEquals(15, calculator.getValor());
         
-        commandManager.undoCommand();
+        commandManager.undoCommand(sumarCommand);
         assertEquals(10, calculator.getValor());
     }
     

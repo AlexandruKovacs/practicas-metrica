@@ -13,14 +13,19 @@ public class CommandManager {
     }
     
     public void registCommand(Command comando) {
-        comando.execute();
         comandosEjecutados.push(comando);
+        comando.execute();
+    }
+    
+    public void undoCommand(Command commando) {
+        comandosEjecutados.pop();
+        commando.undo();
     }
     
     public static Command getCommand(String[] args, Calculator calculator) {
     	
         if (args.length < 2) {
-            throw new IllegalArgumentException("Se deben proporcionar al menos dos argumentos: el comando y el valor.");
+            throw new IllegalArgumentException("Se debe proporcionar el valor y el comando.");
         }
 
         int valor = Integer.parseInt(args[0]);
@@ -45,11 +50,6 @@ public class CommandManager {
             default:
                 throw new IllegalArgumentException("Comando no reconocido: " + comando);
         }
-    }
-
-    public void undoCommand() {
-        Command ultimoComando = comandosEjecutados.pop();
-        ultimoComando.undo();
     }
     
 }
