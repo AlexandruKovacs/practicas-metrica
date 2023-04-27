@@ -2,8 +2,9 @@ package calculator;
 
 public class SetCommand implements Command {
 
-    private final int valor;
-    private final Calculator calculator;
+    private int valor;
+    private int valorAnterior;
+    private Calculator calculator;
 
     public SetCommand(int valor, Calculator calculator) {
         this.valor = valor;
@@ -12,12 +13,13 @@ public class SetCommand implements Command {
 
     @Override
     public void execute() {
+    	valorAnterior = calculator.getValor();
         calculator.setValor(valor);
     }
 
     @Override
     public void undo() {
-    	
+    	calculator.setValor(valorAnterior);
     }
 
 }

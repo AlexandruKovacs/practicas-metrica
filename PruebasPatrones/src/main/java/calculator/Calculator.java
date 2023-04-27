@@ -17,14 +17,7 @@ public class Calculator {
     }
 
     public void multiplicar(int valor) {
-    	this.valor *= valor;
-    	
-        /* try {
-            this.valor *= valor;
-        } catch (ArithmeticException e) {
-            System.out.println("Desbordamiento en la multiplicación");
-        } */
-    	
+    	this.valor *= valor;	
     }
 
     public void dividir(int valor) {
