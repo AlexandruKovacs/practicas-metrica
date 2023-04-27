@@ -10,12 +10,14 @@ public class MultiplicarCommand implements Command {
         this.calculator = calculator;
     }
 
+    @Override
     public void execute() {
     	calculator.multiplicar(valor);
     }
 
+    @Override
     public void undo() {
     	calculator.dividir(valor);
     }
+    
 }
-

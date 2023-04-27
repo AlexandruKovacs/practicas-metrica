@@ -23,7 +23,6 @@ public class Calculator {
         }
     }
 
-
     public void dividir(int valor) {
         if (valor == 0) {
             throw new IllegalArgumentException("División por cero");
@@ -38,5 +37,6 @@ public class Calculator {
     public int getValor() {
         return valor;
     }
+    
 }
 

@@ -10,11 +10,14 @@ public class SumarCommand implements Command {
         this.calculator = calculator;
     }
 
+    @Override
     public void execute() {
     	calculator.sumar(valor);
     }
 
+    @Override
     public void undo() {
     	calculator.restar(valor);
     }
+    
 }

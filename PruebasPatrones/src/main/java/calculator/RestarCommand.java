@@ -10,12 +10,14 @@ public class RestarCommand implements Command {
         this.calculator = calculator;
     }
 
+    @Override
     public void execute() {
     	calculator.restar(valor);
     }
 
+    @Override
     public void undo() {
     	calculator.sumar(valor);
     }
+    
 }
-

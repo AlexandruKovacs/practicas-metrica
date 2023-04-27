@@ -10,11 +10,14 @@ public class DividirCommand implements Command {
         this.calculator = calculator;
     }
 
+    @Override
     public void execute() {
     	calculator.dividir(valor);
     }
 
+    @Override
     public void undo() {
     	calculator.multiplicar(valor);
     }
+    
 }

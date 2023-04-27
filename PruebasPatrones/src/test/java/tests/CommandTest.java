@@ -64,5 +64,6 @@ public class CommandTest {
         commandManager.undoCommand();
         assertEquals(10, calculator.getValor());
     }
+    
 }
 
