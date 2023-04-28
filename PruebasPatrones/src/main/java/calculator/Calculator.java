@@ -17,13 +17,18 @@ public class Calculator {
     }
 
     public void multiplicar(int valor) {
-    	this.valor *= valor;
+    	
+    	try {
+    		this.valor = Math.multiplyExact(this.valor, valor);
+    	} catch (ArithmeticException e) {
+    		throw new NumberFormatException("Overflow!");
+    	}
     }
 
     public void dividir(int valor) {
     	
         if (valor == 0) {
-            throw new IllegalArgumentException("División por cero");
+            throw new ArithmeticException("División por cero");
         }
         
         this.valor /= valor;
@@ -38,4 +43,3 @@ public class Calculator {
     }
     
 }
-

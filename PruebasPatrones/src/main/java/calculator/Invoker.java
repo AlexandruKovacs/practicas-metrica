@@ -5,7 +5,7 @@ public class Invoker {
 	public static Command getCommand(String[] args, Calculator calculator) {
     	
         if (args.length < 2) {
-            throw new IllegalArgumentException("Se debe proporcionar el valor y el comando.");
+            throw new IllegalArgumentException("Se debe proporcionar el valor y el comando");
         }
 
         int valor = Integer.parseInt(args[0]);
