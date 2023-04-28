@@ -17,13 +17,15 @@ public class Calculator {
     }
 
     public void multiplicar(int valor) {
-    	this.valor *= valor;	
+    	this.valor *= valor;
     }
 
     public void dividir(int valor) {
+    	
         if (valor == 0) {
             throw new IllegalArgumentException("División por cero");
         }
+        
         this.valor /= valor;
     }
 

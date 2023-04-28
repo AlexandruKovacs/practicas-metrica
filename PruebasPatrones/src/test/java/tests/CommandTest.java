@@ -57,7 +57,7 @@ public class CommandTest {
     }
     
     @Test
-    public void testUndo() {
+    public void testUndoSumar() {
     	Command sumarCommand = Invoker.getCommand(new String[] {"5", "sumar"}, calculator);
         commandManager.registCommand(sumarCommand);
         assertEquals(15, calculator.getValor());
